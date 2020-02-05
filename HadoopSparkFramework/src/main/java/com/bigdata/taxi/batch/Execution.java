@@ -40,12 +40,13 @@ public class Execution {
 		} else if (args[0].equals("3")) {
 			// /This question depends on 2nd question dataframe.
 			// -----------------------------------------------
-			op.selectFromDSAndFindRoutesWhichDistanceGreater1KmWhichDurationGreater10MinAndWhichPassengersGreater2(op
-					.constructDSAndFindMaxDurationAndDistanceRouteInArea(op
-							.constructDSAndFindNoTaxiRoutesPerDayPerArea(ds)), 0);
+			op.selectFromDSAndFindRoutesWhichDistanceGreater1KmWhichDurationGreater10MinAndWhichPassengersGreater2(
+					op.constructDSAndFindMaxDurationAndDistanceRouteInArea(op
+							.constructDSAndFindNoTaxiRoutesPerDayPerArea(ds)),
+					0);
 		} else if (args[0].equals("4")) {
 			// No dependency
-			op.selectFromDSAndFindTaxiRoutesPerHourFromStart(ds);
+			op.selectFromDSAndFindTaxiRoutesPerHourFromStart(ds, 0);
 		} else if (args[0].equals("5")) {
 			// No dependency
 			// 9 more arguments from shell Script
@@ -68,7 +69,7 @@ public class Execution {
 			// No dependency
 			op.selectFromDSAndAndFindHowManyTaxiCalledBySundaySaturdayByHour(op
 					.constructDSAndAndFindHowManyTaxiCalledBySundaySaturdayByHour(ds));
-   		} else if (args[0].equals("8")) {
+		} else if (args[0].equals("8")) {
 			// No dependency
 			op.selectFromDSAndAndFindHowManyTaxiCalledByMondayByHour(op
 					.constructDSAndAndFindHowManyTaxiCalledByMondayByHour(ds));

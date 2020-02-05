@@ -93,9 +93,17 @@ public class Operations {
 		return null;
 	}
 
-	public void selectFromDSAndFindTaxiRoutesPerHourFromStart(Dataset<Row> ds) {
-		ds.groupBy(functions.window(col("pickup_datetime"), "1 hour")).count()
-				.sort(asc("window")).show();
+	public Dataset<Row> selectFromDSAndFindTaxiRoutesPerHourFromStart(
+			Dataset<Row> ds, int streaming_mode) {
+		if (streaming_mode == 0) {
+			ds.groupBy(functions.window(col("pickup_datetime"), "1 hour"))
+					.count().sort(asc("window")).show();
+			return null;
+		} else if (streaming_mode == 1)
+			return ds.groupBy(
+					functions.window(col("pickup_datetime"), "1 hour")).count();
+
+		return null;
 	}
 
 	public Dataset<Row> constructDSAndAndFindHowManyTaxiTripsStartedInLastHourInThisArea(
