@@ -1,0 +1,5 @@
+# FUll HDFS csv path
+---
+path:
+    hdfs: hdfs://quickstart.cloudera:8020//cloudera//
+    csv: fares.csv
