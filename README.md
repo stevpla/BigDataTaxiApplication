@@ -1,6 +1,52 @@
 # BigDataTaxiApplication Project
-Big data environment using Hadoop and Spark in taxi routes.
 
-## Set up Java 8 [Eclipse IDE]Oracle offers java 8 for download. Access is at https://.... Extract folder, and configure Eclipse to use JDK 1.8 **offline!**
-## It's a Maven ProjectSee pom.xml for all hadoop and spark librariers, as well as their versions.
-## HDFS Commands- Import csv to hadoop node: $ **hdfs dfs -put /home/cloudera/Desktop/fares.csv hdfs://quickstart.cloudera:8020//user//cloudera//fares.csv**- Other## Hue Toolhttp://quickstart.cloudera:8888/hue. In files, we can see hdfs files.
+A Java software project based on Big Data platforms. The concept is been based on Hadoop and Spark systems. And taxi routes (.csv) file is stored into hdfs and upon this, queries are executed for different scenarios. For this project there are specific prerequisites and steps in order to run the software and the queries.
+For the docker spark cluster, all the docker files and scripts i used, belongs to the **rubenafo's** github user. For more info about *Docker-Spark-Cluster*, please refer to **rubenafo's** github repository  [rubenafo/docker-spark-cluster](https://github.com/rubenafo/docker-spark-cluster).
+
+
+## Prerequisites
+
+Tools and software you need to deploy project successfully. 
+* **Operating System**
+The project has been build upon CentOS 6 OS.
+* **Apache Hadoop**
+asdas
+* **Apache Spark**
+asdas
+* **Oracle Java SE 8**
+You can download java version 8 from the [oracle website](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+* **Apache Maven**
+You can download mvn version 3.0.4 from the [Maven Releases](https://maven.apache.org/docs/3.0.4/release-notes.html).
+* **Eclipse IDE** [Alternatively, any other IDE you want]
+
+## Deploy Project
+
+After setting up all essential tools, then you are in a linux os with java, mvn and hadoop-spark. First, you have to do 
+```sh
+$ git clone https://github.com/stevpla/BigDataTaxiApplication.git
+```
+to download project. Then, you have to build the two java maven projects (pom.xml) with mvn tool. Below are the necessary steps to build:
+1.
+2.
+3.
+
+There are two types of queries to run. Batch and streaming. 
+### Batch
+In the path:
+```sh
+HadoopSparkFramework/src/main/resources/shscripts/run_batch_question.sh
+```
+there is a shell script you can execute to run every query. There are 8 queries as mentioned in exercise. So, for example you could run the first query, as:
+```sh
+$ ./run_batch_question.sh 1
+```
+which 1 is the number of parameter. See the script for more details.
+### Streaming
+
+
+## Docker Spark Cluster
+
+Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
+
+> Before starting to publish, you must link an account in the **Publish** sub-menu.
+
