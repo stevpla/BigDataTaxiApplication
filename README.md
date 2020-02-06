@@ -25,10 +25,20 @@ After setting up all essential tools, then you are in a linux os with java, mvn 
 ```sh
 $ git clone https://github.com/stevpla/BigDataTaxiApplication.git
 ```
-to download project. Then, you have to build the two java maven projects (pom.xml) with mvn tool. Below are the necessary steps to build:
-1.
-2.
-3.
+to download project. Before you build the projects, you can edit two yml files located at (```/HadoopSparkFramework/src/main/resources/configurations/```)
+* **hdfs_csv_path.yml**
+An example could be:
+```
+hdfs: hdfs://quickstart.cloudera:8020//cloudera//
+csv: fares.csv
+```
+* **tcp_server.yml**
+In case of streaming mode, you can define the ip address and port of the TCP server
+
+The, you have to build the two java maven projects (pom.xml) with mvn tool. Below are the necessary steps to build:
+1. mvn build
+2. mvn clean
+3. mvn other
 
 There are two types of queries to run. Batch and streaming. 
 ### Batch
@@ -40,9 +50,18 @@ there is a shell script you can execute to run every query. There are 8 queries 
 ```sh
 $ ./run_batch_question.sh 1
 ```
-which 1 is the number of parameter. See the script for more details.
+which 1 is the number of question. See the script for more details.
 ### Streaming
-
+In the path:
+```sh
+HadoopSparkFramework/src/main/resources/shscripts/run_streaming_question.sh
+```
+there is a shell script for run streamings questions (3,4,6).
+So, for example you could run the first query, as:
+```sh
+$ ./run_streaming_question.sh 3
+```
+which 3 is the number of question. See the script for more details.
 
 ## Docker Spark Cluster
 
